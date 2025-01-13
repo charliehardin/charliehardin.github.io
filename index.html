@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie Hardin</title>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@latest/dist/terminal.min.css">
+    <style>
+        :root {
+            --background-color: #151515;
+            --font-color: #e8eff2;
+            --primary-color: #1a95e0;
+            --secondary-color: #4d9be9;
+            --invert-font-color: #151515;
+        }
+
+        body {
+            background-color: var(--background-color);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--background-color);
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--font-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            margin-top: 6rem; /* To prevent overlapping with navbar */
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .terminal-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .terminal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 100px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            color: var(--primary-color);
+        }
+
+        .skill-item img {
+            max-width: 64px;
+            height: 64px;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover img {
+            transform: rotate(10deg);
+        }
+
+        .blog-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .blog-item:hover {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 0.5rem;
+            transform: translateX(5px);
+        }
+
+        .blog-item img {
+            max-width: 450px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-container img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://github.com/charliehardin">Github</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-container">
+                    <img src="images/Me.jpg" alt="About Me Image">
+                    <p class="placeholder-text">
+                        Hello! I'm Charlie Hardin, an IT professional with over 10 years of experience working across a variety of fields, from customer service and sales to IT support and systems administration, and beyond. With a passion for technology and a strong foundation in customer service, troubleshooting, project management, and problem solving, I've spent my career helping individuals and organizations leverage technology to solve problems and improve efficiency. <br/> <br/>
+                        I’m a lifelong learner — always diving into new technologies, whether it's mastering the latest cloud services, experimenting with automation, or expanding my skills in software development. I’m passionate about staying on top of the ever-evolving landscape of IT, and I take pride in turning complex technical concepts into simple, actionable solutions.
+                        Whether it’s setting up servers, optimizing IT infrastructures, or providing hands-on support for end-users, I’m all about making technology work for people. I’m constantly exploring new tools, frameworks, and methodologies to keep my skills sharp and my solutions cutting-edge.<br/><br/>
+                        Technology isn't just my job; it’s my passion. I’m excited about the future of IT — how it connects people, powers innovation, and shapes our daily lives. <br/>
+                        If you're looking for a tech-savvy professional who is both approachable and knowledgeable, let's connect and explore how I can help bring your projects to life!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="work">
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="terminal-timeline">
+                    <div class="terminal-card">
+                        <header>IT Consultant at Native Tech Solutions</header>
+                        <div>
+                            <p>Dec 2022 - Present</p>
+                            <p>
+                                <ul>
+                                <li>Provide comprehensive IT consultation to clients, specializing in business infrastructure support, web development services, and hardware repair.</li>
+                                <li>Deliver strategic technology recommendations and solutions to improve clients' operational efficiency and increase profitability.</li>
+                                <li>Oversee web development projects from conception to deployment, ensuring timely delivery and high-quality outcomes.</li>
+                                <li>Work closely with clients to understand their business objectives, target audience, and brand image, and develop customized web solutions that align with their goals.</li>
+                                <li>Provide ongoing maintenance and support for clients' web applications, including troubleshooting technical issues and implementing software updates.</li>
+                                <li>Conduct regular hardware maintenance and repairs to ensure optimal performance and longevity of clients' equipment.</li>
+                                <li>Perform system upgrades, software installations, and security audits to protect clients' networks and devices from potential cyber threats.</li>
+                                <li>Train clients on proper technology use and best practices to maximize productivity and minimize downtime.</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>Service Desk Analyst at Glanbia</header>
+                        <div>
+                            <p>Aug 2021 - Nov 2022</p>
+                            <p>
+                                <ul>
+                                    <li>Provide L2 client support and technical issue resolution to all company users/employees.</li>
+                                    <li>Support desktop applications, mobile devices, printers, collaboration & productivity
+                                        infrastructure via multi-channel support (phone, email, desk side, IM etc.)</li>
+                                    <li>Hardware build activities and software deployment following company standards.</li>
+                                    <li>Manage ticket queues and maintain high customer satisfaction</li>
+                                    <li>Create and contribute documentation for IT Knowledge Base as well as guides for end users</li>
+                                    <li>Microsoft 365 support (Office applications, Teams, SharePoint, OneDrive, etc)</li>
+                                    <li>Exchange Server Administration (On-Prem & EXO)</li>
+                                    <li>Azure AD Admin/Configuration Tasks</li>
+                                    <li>Network support (VPN, Firewall & Proxy troubleshooting, and configuration)</li>
+                                    <li>Mobile Device Management – MobileIron</li>
+                                    <li>Create customized software tools and utilities for automation of IT tasks as well as enhanced
+                                        support for end users – utilizing PowerShell, C#, .NET</li>
+                                    <li>Help facilitate and assist with company acquisition of new subsidiaries from an IT standpoint</li>
+                                    <li>Work with multiple teams across organization around the globe</li>
+                                    <li>Host new-hire orientation sessions to introduce new employees to company technologies,
+                                        standards, etc.</li>
+                                    <li>Work with vendors for hardware events, warranty claims, issue escalation, etc.</li>
+                                    <li>Offer consultation and guidance to Level 1 technicians</li>
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>Mobile Expert at T-Mobile</header>
+                        <div>
+                            <p>July 2020 - April 2021</p>
+                            <p>
+                                <ul>
+                                    <li>Provide exceptional customer service to individuals visiting the store, including greeting
+                                        customers, answering phones, and assessing their needs.</li>
+                                    <li>Exceed monthly revenue goals through acquiring new customer accounts, maximizing existing
+                                        customers' accounts to identify revenue opportunities, and excelling in quality metrics.</li>
+                                    <li>Assist with all functions within retail store in compliance with company policies and procedures.</li>
+                                    <li>Work with store management in opening, closing, and operating the retail facility, including but not limited to cash handling, inventory count and deposits as governed by operations control
+                                    standards.</li>
+                                    <li>Assist customers with service activations, changes, and bill payments, responding to billing
+                                        inquire equipment replacement, selling accessories and processing price plan changes and
+                                        upgrades.</li>
+                                    <li>Assist in other tasks, duties, or projects as assigned by management.</li>
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>Desktop Support Technician at KForce</header>
+                        <div>
+                            <p>Feb 2020 (Short Term Contract)</p>
+                            <p>
+                                <ul>
+                                    <li>Deployed new computer assets, installed applications as needed and performed any other initial
+                                        startup activities.</li>
+                                    <li>Full install of docking stations, new monitors, and all other supplied materials.</li>
+                                    <li>Full data backup/transfer for users.</li>
+                                    <li>Upgraded in-place workstations to Windows 10, ensured network and printer connections.</li>
+                                    <li>Ensured project completion at end of set project dates.</li>
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>Lead Technician & Assistant Manager at 360 Wireless</header>
+                        <div>
+                            <p>June 2018 - June 2019</p>
+                            <p>
+                                <ul>
+                                    <li>Provided free troubleshooting and repair estimates for client approval.</li>
+                                    <li>Ensured that store had replacement kits and spare parts for any planned repairs, maintained
+                                        inventory.</li>
+                                    <li>Opened, disassembled, repaired, replaced parts, and reassembled units when done.</li>
+                                    <li>Tested repaired units and advised clients when they could retrieve their units.</li>
+                                    <li>Sold smartphones, and smartphone accessories to customers who visited the store.</li>
+                                    <li>Provided leadership and direction to all employees.</li>
+                                    <li>Trained new employees, teaching best repair practices and store policies, procedures.</li>
+                                    <li>Supported store manager as needed.</li>
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>Technician at Native Tech Solutions</header>
+                        <div>
+                            <p>July 2016 - May 2018</p>
+                            <p>
+                                <ul>
+                                    <li>Provide IT infrastructure support for local business clients.</li>
+                                    <li>Conduct regular hardware maintenance and repairs to ensure optimal performance and
+                                        longevity of clients' equipment.</li>
+                                    <li>Perform system upgrades, software installations, and hardware repair/service for various
+                                        devices including Desktop PCs, Laptops, Tablets, and Smartphones.</li>
+                                    <li>Individual training sessions with clients on various technologies:
+                                        Windows, MacOS, iOS, Android, Microsoft Office, Adobe Creative Suite</li>
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>Sales Consultant at Simply Mac</header>
+                        <div>
+                            <p>June 2015 - June 2016</p>
+                            <p>
+                                <ul>
+                                    <li>Proactively acknowledged, greeted, and assisted customers in the store.</li>
+                                    <li>Offered customers exemplary and timely service; Provided accurate product information.</li>
+                                    <li>Served multiple customers, discovered their needs, and made recommendations to generate
+                                        sales.</li>
+                                    <li>Enhanced product knowledge.</li>
+                                    <li>Merchandised, stocked, and replenished the selling floor constantly.</li>
+                                    <li>Maintained working knowledge of store’s policies and procedures.</li>
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terminal-card">
+                        <header>IT Helpdesk at Twin Falls High School</header>
+                        <div>
+                            <p>Sept 2013 - May 2015</p>
+                            <p>
+                                <ul>
+                                    <li>Configure/Maintain Student Network</li>
+                                    <li>Build Custom PCs for classroom use</li>
+                                    <li>Install/Configure software and hardware for classroom PCs (Windows 7, Linux)</li>
+                                    <li>Help Design and Develop school website, mobile web applications for teachers and students to
+                                        utilize. (HTML, CSS, JavaScript)</li>
+                                    <li>Offer Support and Service to students and staff for various technology needs. (PC support,
+                                        Printers, Projectors, SmartBoards, Mobile Devices)</li>
+                                    <li>Various projects including keyless entry to “HackerSpace” utilizing Linux, Raspberry Pi; Bluetooth
+                                        enabled stereo speakers for Gym; Custom Web Apps for teachers to keep track of students,
+                                        lesson plans, scheduling, etc.</li>
+                                    <li>Earned commendations for teamwork, flexibility, and work excellence in providing IT support to
+                                        students and faculty.</li>
+
+                                </ul>
+                                
+                            </p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <img src="icons/windows.png" alt="Windows Icon">
+                        <p>Windows</p>
+                    </div> 
+                    <div class="skill-item">
+                        <img src="icons/powershell.png" alt="PowerShell Icon">
+                        <p>PowerShell</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/Microsoft_Azure.svg.png" alt="Azure Icon">
+                        <p>Azure</p>
+                    </div> 
+                    <div class="skill-item">
+                        <img src="icons/microsoft.png" alt="M365 Icon">
+                        <p>Microsoft 365</p>
+                    </div> 
+                     
+                    <div class="skill-item">
+                        <img src="icons/linux.png" alt="Linux Icon">
+                        <p>Linux</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/macos.png" alt="macOS Icon">
+                        <p>macOS</p>
+                    </div>
+                 
+                    <div class="skill-item">
+                        <img src="icons/webDev_.png" alt="WebDev Icon">
+                        <p>Web Development</p>
+                    </div> 
+                    <div class="skill-item">
+                        <img src="icons/MDM.png" alt="MDM Icon">
+                        <p>Mobile Device Management</p>
+                    </div> 
+                    <div class="skill-item">
+                        <img src="icons/help-desk.png" alt="CS Icon">
+                        <p>Customer Service</p>
+                    </div>
+                     <div class="skill-item">
+                        <img src="icons/problemSolving.png" alt="Problem Solving Icon">
+                        <p>Problem Solving</p>
+                    </div> 
+                   
+                    <div class="skill-item">
+                        <img src="icons/projManage.png" alt="Project Management Icon">
+                        <p>Project Management</p>
+                    </div>
+                   
+                    <div class="skill-item">
+                        <img src="icons/adapt.png" alt="Adapt Icon">
+                        <p>Adaptability</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="terminal-timeline">
+                    <div class="terminal-card">
+                        <header>PowerShell Utility</header>
+                        <div>
+                            <p>A simple GUI for useful PowerShell scripts (Coming Soon)</p>
+                            <img src="images/PSUtil.png" alt="PowerShell Utility Screenshot">
+                        </div>
+                    </div>
+                   <!--
+                    <div class="terminal-card">
+                        <header>Verify Hash Utility</header>
+                        <div>
+                            <p>A cross-platform utility for verifying file hashes and signatures, written in Python.</p>
+                            <img src="images/hashcheck_verify.png" alt="Project 2">
+                        </div>
+                    </div>
+                -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <div class="container">
+                <h2>Blog</h2>
+                <div class="blog-list">
+                    <div class="blog-item">
+                        <a href="blog.html"><img src="images/winServer.png" alt="Blog Post 1"></a>
+                        <a href="blog.html">Setting Up My Windows Server Homelab Environment</a>
+                    </div>
+                    <br/>
+          
+                    <br/>
+                    <div class="blog-item">
+                        <a href="blog.html"><img src="images/arch.png" alt="Blog Post 3"></a>
+                        <a href="blog.html">I Started Using Arch, btw.</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Charlie Hardin</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation for sections
+        const sections = document.querySelectorAll('section');
+
+        const revealSection = () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+
+        document.addEventListener('scroll', revealSection);
+        window.addEventListener('load', revealSection);
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie Hardin's Blog</title>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@latest/dist/terminal.min.css">
+    <style>
+        :root {
+            --background-color: #151515;
+            --font-color: #e8eff2;
+            --primary-color: #1a95e0;
+            --secondary-color: #fafafa;
+            --invert-font-color: #151515;
+        }
+
+        body {
+            background-color: var(--background-color);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--background-color);
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--font-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin: 8rem 0 4rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--secondary-color);
+        }
+
+        .blog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .blog-post {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--invert-font-color);
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post img {
+            max-width: 300;
+            max-height: 300;
+        }
+
+        .blog-post-content {
+            padding: 1.5rem;
+        }
+
+        .blog-post h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post p {
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .blog-post a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .blog-post a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Blog</h1>
+        <p>Thoughts, tutorials, and stories from my journey through IT</p>
+    </header>
+
+    <!-- Blog Posts -->
+    <main class="blog-container">
+        <article class="blog-post">
+           
+            <div class="blog-post-content">
+                <h2>Welcome!</h2>
+                <p>
+                    Hey there! Welcome to my little corner of the internet. I don’t have a strict plan for what I’ll be posting or how often, but I’m excited to share my thoughts, insights, and experiences with all things IT — or just the cool tech stuff I find interesting.
+
+                    You’ll probably find a mix of tutorials, project showcases, and maybe a few rants on the tech world as I dive deeper into different topics. The goal is to keep it casual, informative, and hopefully fun. So, we’ll see where this goes!
+
+                    Thanks for stopping by, and feel free to check back every now and then. Who knows what might pop up here?
+                    <br/> <br/>
+                    -Charlie
+                
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <img src="images/arch-nice.jpg" width="400" height="400" alt="Post 2">
+            <div class="blog-post-content">
+                <h2>I Started Using Arch, btw.</h2>
+                <p>
+                    Will I ever settle on just one Linux distro? Probably not. For now, let's dive into Arch Linux.
+                </p>
+                <a href="#">Coming Soon!</a>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <img src="images/winServer.png" width="400" height="auto" alt="Post 2">
+            <div class="blog-post-content">
+                <h2>Setting Up My Windows Server Homelab Environment</h2>
+                <p>
+                    Let's take a look at my Virtual Windows Server Homelab Environment that I use for testing and learning.
+                </p>
+                <a href="#">Coming Soon!</a>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Charlie Hardin</p>
+    </footer>
+</body>
+</html>
